@@ -1,0 +1,48 @@
+/*
+Theme Name: RTL Demo
+
+Adding support for language written in a Right To Left (RTL) direction is easy -
+it's just a matter of overwriting all the horizontal positioning attributes
+of your CSS stylesheet in a separate stylesheet file named rtl.css.
+
+https://codex.wordpress.org/Right_to_Left_Language_Support
+
+*/
+
+
+body {
+	direction: rtl;
+	unicode-bidi: embed;
+}
+
+.floated-div {
+	float: right;
+}
+
+.text-align-div {
+	text-align: left;
+}
+
+.positioning-div {
+	left: auto;
+	right: 1em;
+}
+
+.alternate-directional-arrow-div,
+.rotated-directional-arrow-div {
+	padding: 1em 1em 1em 5em;
+}
+
+.alternate-directional-arrow-div:before,
+.rotated-directional-arrow-div:before {
+	left: 1em;
+	right: auto;
+}
+
+.alternate-directional-arrow-div:before {
+	content: "\e901"
+}
+
+.rotated-directional-arrow-div:before {
+	transform: scaleX(-1);
+}
